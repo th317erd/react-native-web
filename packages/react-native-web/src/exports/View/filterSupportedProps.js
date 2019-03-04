@@ -72,7 +72,7 @@ const filterSupportedProps = props => {
         supportedProps[prop] ||
         prop.indexOf('aria-') === 0 ||
         prop.indexOf('data-') === 0 ||
-        prop.match(/^[a-z0-9_-]$/)
+        prop.match(/^[a-z0-9_-]+$/)
       ) {
         safeProps[prop] = props[prop];
       }
