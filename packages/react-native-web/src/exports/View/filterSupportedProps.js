@@ -68,7 +68,12 @@ const filterSupportedProps = props => {
   const safeProps = {};
   for (const prop in props) {
     if (props.hasOwnProperty(prop)) {
-      if (supportedProps[prop] || prop.indexOf('aria-') === 0 || prop.indexOf('data-') === 0) {
+      if (
+        supportedProps[prop] ||
+        prop.indexOf('aria-') === 0 ||
+        prop.indexOf('data-') === 0 ||
+        prop.match(/^[a-z0-9_-]$/)
+      ) {
         safeProps[prop] = props[prop];
       }
     }
